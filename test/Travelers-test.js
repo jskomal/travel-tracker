@@ -1,12 +1,12 @@
 import chai from 'chai'
 const expect = chai.expect
-import { testData } from './test-data'
+import { travellerTestData } from './test-data'
 
 describe("Traveler's Tests", () => {
   beforeEach(() => {
-    traveller1 = new Traveler(testData[0])
-    traveller2 = new Traveler(testData[1])
-    traveller3 = new Traveler(testData[2])
+    traveller1 = new Traveler(travellerTestData[0])
+    traveller2 = new Traveler(travellerTestData[1])
+    traveller3 = new Traveler(travellerTestData[2])
   })
 
   it('should be a function', () => {
