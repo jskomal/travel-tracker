@@ -84,7 +84,7 @@ h1 {
 nav {
   position: fixed;
   height: 100%;
-  width: 20wv;
+  width: 20vw;
   top: 20vh;
   border: 1px solid red;
 }
