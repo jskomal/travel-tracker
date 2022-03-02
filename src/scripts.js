@@ -9,4 +9,28 @@ import './images/earth-wht.svg'
 import './images/island.svg'
 import './images/paper-plane-clr.svg'
 
-console.log('This is the JavaScript entry file - your code begins here.')
+import Traveller from './Traveler'
+
+// query selectors
+
+// globals
+const data = {}
+
+//functions
+const fetchAllData = () => {
+  Promise.all([
+    fetchData('travelers'),
+    fetchData('trips'),
+    fetchData('destinations')
+  ]).then((data) => parseData(data))
+}
+
+const parseData = (fetchedData) => {
+  data.travelers = []
+  fetchedData[0].forEach((traveller) => {
+    data.travelers.push(new Traveller(traveller))
+  })
+}
+
+// event listeners
+window.addEventListener('load', fetchAllData)
