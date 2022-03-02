@@ -32,6 +32,6 @@ describe.only('Trips Tests', () => {
     expect(trip1.date).to.equal('2022/09/16')
     expect(trip1.duration).to.equal(8)
     expect(trip1.status).to.equal('approved')
-    expect(trip1.suggestedActivites).to.deep.equal([])
+    expect(trip1.suggestedActivities).to.deep.equal([])
   })
 })
