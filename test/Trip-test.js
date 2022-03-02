@@ -1,8 +1,13 @@
 import chai from 'chai'
 const expect = chai.expect
 import { tripsTestData } from './test-data'
+import { Trip } from '../src/Trip'
 
-describe('Trips Tests', () => {
+describe.only('Trips Tests', () => {
+  let trip1
+  let trip2
+  let trip3
+
   beforeEach(() => {
     trip1 = new Trip(tripsTestData[0])
     trip2 = new Trip(tripsTestData[1])
@@ -21,8 +26,8 @@ describe('Trips Tests', () => {
 
   it('should have an id, userID, destinationID, travelers, date, duration, status, and suggestedActivities', () => {
     expect(trip1.id).to.equal(1)
-    expect(trip1.userID).to.equal(44)
-    expect(trip1.destinationID).to.equal(49)
+    expect(trip1.userID).to.equal(1)
+    expect(trip1.destinationID).to.equal(1)
     expect(trip1.travelers).to.equal(1)
     expect(trip1.date).to.equal('2022/09/16')
     expect(trip1.duration).to.equal(8)
