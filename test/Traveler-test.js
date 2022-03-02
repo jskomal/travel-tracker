@@ -1,6 +1,7 @@
 import chai from 'chai'
 const expect = chai.expect
 import { travellerTestData } from './test-data'
+// import Traveler
 
 describe("Traveler's Tests", () => {
   beforeEach(() => {
