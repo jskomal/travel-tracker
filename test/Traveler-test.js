@@ -1,13 +1,17 @@
 import chai from 'chai'
 const expect = chai.expect
-import { travellerTestData } from './test-data'
-// import Traveler
+import { travelerTestData } from './test-data'
+import { Traveler } from '../src/Traveler'
 
 describe("Traveler's Tests", () => {
+  let traveler1
+  let traveler2
+  let traveler3
+
   beforeEach(() => {
-    traveller1 = new Traveler(travellerTestData[0])
-    traveller2 = new Traveler(travellerTestData[1])
-    traveller3 = new Traveler(travellerTestData[2])
+    traveler1 = new Traveler(travelerTestData[0])
+    traveler2 = new Traveler(travelerTestData[1])
+    traveler3 = new Traveler(travelerTestData[2])
   })
 
   it('should be a function', () => {
@@ -15,20 +19,20 @@ describe("Traveler's Tests", () => {
   })
 
   it('should be an instantiation of the Traveler Class', () => {
-    expect(traveller1).to.be.an.instanceof(Traveler)
-    expect(traveller2).to.be.an.instanceof(Traveler)
-    expect(traveller3).to.be.an.instanceof(Traveler)
+    expect(traveler1).to.be.an.instanceof(Traveler)
+    expect(traveler2).to.be.an.instanceof(Traveler)
+    expect(traveler3).to.be.an.instanceof(Traveler)
   })
 
-  it('should have an ID, name, and travellerType', () => {
-    expect(traveller1.id).to.equal(1)
-    expect(traveller1.name).to.equal('Jordan Skomal')
-    expect(traveller1.travellerType).to.equal('relaxer')
+  it('should have an ID, name, and travelerType', () => {
+    expect(traveler1.id).to.equal(1)
+    expect(traveler1.name).to.equal('Jordan Skomal')
+    expect(traveler1.travelerType).to.equal('relaxer')
   })
 
   it("should have a method to return the user's first name", () => {
-    expect(traveller1.getFirstName()).to.equal('Jordan')
-    expect(traveller2.getFirstName()).to.equal('Taylor')
-    expect(traveller3.getFirstName()).to.equal('John')
+    expect(traveler1.getFirstName()).to.equal('Jordan')
+    expect(traveler2.getFirstName()).to.equal('Taylor')
+    expect(traveler3.getFirstName()).to.equal('John')
   })
 })
