@@ -3,7 +3,7 @@ const expect = chai.expect
 import { destinationTestData } from './test-data'
 import { Destination } from '../src/Destination'
 
-describe('Destination Tests', () => {
+describe.only('Destination Tests', () => {
   let destination1
   let destination2
   let destination3
@@ -25,6 +25,7 @@ describe('Destination Tests', () => {
   })
 
   it('should have an id, destination, estimatedLodgingCostPerDay, estimatedFlightCostPerPerson, image, and alt', () => {
+    console.log(destination1)
     expect(destination1.id).to.equal(1)
     expect(destination1.destination).to.equal('Lima, Peru')
     expect(destination1.estimatedLodgingCostPerDay).to.equal(70)
