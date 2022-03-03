@@ -1,7 +1,7 @@
 import chai from 'chai'
 const expect = chai.expect
 import { DataRepository } from '../src/DataRepository'
-import { travelerTestData, tripsTestData, destinationTestData } from './test-data'
+import { travelerTestData, tripTestData, destinationTestData } from './test-data'
 
 import { Traveler } from '../src/Traveler'
 import { Trip } from '../src/Trip'

@@ -1,6 +1,6 @@
 import chai from 'chai'
 const expect = chai.expect
-import { tripsTestData } from './test-data'
+import { tripTestData } from './test-data'
 import { Trip } from '../src/Trip'
 
 describe('Trips Tests', () => {
@@ -9,9 +9,9 @@ describe('Trips Tests', () => {
   let trip3
 
   beforeEach(() => {
-    trip1 = new Trip(tripsTestData[0])
-    trip2 = new Trip(tripsTestData[1])
-    trip3 = new Trip(tripsTestData[2])
+    trip1 = new Trip(tripTestData[0])
+    trip2 = new Trip(tripTestData[1])
+    trip3 = new Trip(tripTestData[2])
   })
 
   it('should be a function', () => {
