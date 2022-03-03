@@ -1,0 +1,3 @@
+class Destination {
+  constructor(destination) {}
+}
