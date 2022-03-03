@@ -12,13 +12,16 @@ import './images/paper-plane-clr.svg'
 import { Traveler } from './Traveler'
 import { Trip } from './Trip'
 import { Destination } from './Destination'
+import { DataRepository } from './DataRepository'
 
 import { fetchData } from './apiCalls'
+
+import dayjs from 'dayjs'
 
 // query selectors
 
 // globals
-const data = {}
+let data = {}
 
 //functions
 const fetchAllData = () => {
@@ -30,11 +33,15 @@ const fetchAllData = () => {
 }
 
 const parseData = (fetchedData) => {
-  data.travelers = fetchedData[0].travelers.map((traveler) => new Traveler(traveler))
-  data.trips = fetchedData[1].trips.map((trip) => new Trip(trip))
-  data.destinations = fetchedData[2].destinations.map(
+  const dataRepository = {}
+  dataRepository.travelers = fetchedData[0].travelers.map(
+    (traveler) => new Traveler(traveler)
+  )
+  dataRepository.trips = fetchedData[1].trips.map((trip) => new Trip(trip))
+  dataRepository.destinations = fetchedData[2].destinations.map(
     (destination) => new Destination(destination)
   )
+  data = new DataRepository(dataRepository)
   console.log(data)
 }
 
