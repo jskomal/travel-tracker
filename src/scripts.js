@@ -30,15 +30,10 @@ const fetchAllData = () => {
 }
 
 const parseData = (fetchedData) => {
-  data.travelers = []
-  data.trips = []
-  data.destinations = []
-  fetchedData[0].travelers.forEach((traveler) => {
-    data.travelers.push(new Traveler(traveler))
-  })
-  fetchedData[1].trips.forEach((trip) => data.trips.push(new Trip(trip)))
-  fetchedData[2].destinations.forEach((destination) =>
-    data.destinations.push(new Destination(destination))
+  data.travelers = fetchedData[0].travelers.map((traveler) => new Traveler(traveler))
+  data.trips = fetchedData[1].trips.map((trip) => new Trip(trip))
+  data.destinations = fetchedData[2].destinations.map(
+    (destination) => new Destination(destination)
   )
   console.log(data)
 }
