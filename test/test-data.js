@@ -79,4 +79,6 @@ const tripsTestData = [
   }
 ]
 
-export { travelerTestData, tripsTestData, destinationTestData }
+const dataRepositoryTestData = [travelerTestData, tripsTestData, destinationTestData]
+
+export { travelerTestData, tripsTestData, destinationTestData, dataRepositoryTestData }
