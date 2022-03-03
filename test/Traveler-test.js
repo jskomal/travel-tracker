@@ -3,7 +3,7 @@ const expect = chai.expect
 import { travelerTestData } from './test-data'
 import { Traveler } from '../src/Traveler'
 
-describe("Traveler's Tests", () => {
+describe.only("Traveler's Tests", () => {
   let traveler1
   let traveler2
   let traveler3
