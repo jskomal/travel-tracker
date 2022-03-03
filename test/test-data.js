@@ -46,7 +46,7 @@ const destinationTestData = [
   }
 ]
 
-const tripsTestData = [
+const tripTestData = [
   {
     id: 1,
     userID: 1,
@@ -79,6 +79,6 @@ const tripsTestData = [
   }
 ]
 
-const dataRepositoryTestData = [travelerTestData, tripsTestData, destinationTestData]
+const dataRepositoryTestData = [travelerTestData, tripTestData, destinationTestData]
 
-export { travelerTestData, tripsTestData, destinationTestData, dataRepositoryTestData }
+export { travelerTestData, tripTestData, destinationTestData, dataRepositoryTestData }
