@@ -9,7 +9,11 @@ import './images/earth-wht.svg'
 import './images/island.svg'
 import './images/paper-plane-clr.svg'
 
-import Traveller from './Traveler'
+import { Traveler } from './Traveler'
+import { Trip } from './Trip'
+import { Destination } from './Destination'
+
+import { fetchData } from './apiCalls'
 
 // query selectors
 
@@ -27,9 +31,16 @@ const fetchAllData = () => {
 
 const parseData = (fetchedData) => {
   data.travelers = []
-  fetchedData[0].forEach((traveller) => {
-    data.travelers.push(new Traveller(traveller))
+  data.trips = []
+  data.destinations = []
+  fetchedData[0].travelers.forEach((traveler) => {
+    data.travelers.push(new Traveler(traveler))
   })
+  fetchedData[1].trips.forEach((trip) => data.trips.push(new Trip(trip)))
+  fetchedData[2].destinations.forEach((destination) =>
+    data.destinations.push(new Destination(destination))
+  )
+  console.log(data)
 }
 
 // event listeners
