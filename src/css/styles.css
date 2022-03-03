@@ -140,8 +140,32 @@ main {
 }
 
 .trip-card {
-  width: 28vw;
+  width: 26vw;
   background-color: #eefaf9;
   margin: 0.5rem;
-  border-top: 1vh solid #1d3557;
+  border-bottom: 1vh solid #1d3557;
+}
+
+.image-header {
+  background-color: #1d3557;
+  color: #fff;
+}
+
+.image-header > img {
+  width: 100%;
+  height: 20vh;
+  object-fit: cover;
+}
+
+.trip-info {
+  height: 30vh;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
 }

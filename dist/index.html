@@ -28,23 +28,35 @@
         <button class="trip-filter-button" id="viewUpcomming">Upcoming</button>
         <button class="trip-filter-button" id="viewPast">Past</button>
         <button class="trip-filter-button" id="viewPending">Pending</button>
+        <button class="trip-filter-button finance-button" id="viewFinancials">
+          Purchases
+        </button>
+        <button class="trip-filter-button finance-button" id="bookFlight">
+          Book a new trip
+        </button>
       </nav>
       <main>
-        <section class="top-view">
-          <article class="trip-maker"></article>
-          <article class="financials"></article>
-        </section>
         <section class="trip-view">
           <article class="trip-card">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium,
-            dignissimos!
+            <div class="image-header">
+              <img
+                src="https://images.unsplash.com/photo-1489171084589-9b5031ebcf9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80"
+                alt="Lima, Peru"
+              />
+              <h3 class="destination-name-text">Lima, Peru</h3>
+            </div>
+            <section class="trip-info">
+              <h4>Start Date: X</h4>
+              <h4>End Date: X</h4>
+              <h4>X travelers</h4>
+              <h4>Suggested Activities: X</h4>
+              <h4>Trip Status: X</h4>
+            </section>
           </article>
-          <article class="trip-card">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, optio.
-          </article>
-          <article class="trip-card">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, magni.
-          </article>
+        </section>
+        <section class="top-view">
+          <article class="trip-maker hidden"></article>
+          <article class="financials hidden"></article>
         </section>
       </main>
     </div>
