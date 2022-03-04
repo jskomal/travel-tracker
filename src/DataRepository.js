@@ -14,7 +14,7 @@ class DataRepository {
       return (
         acc +
         currentTrip.duration * currentDestination.estimatedLodgingCostPerDay +
-        currentDestination.estimatedFlightCostPerPerson * currentTrip.travelers
+        currentDestination.estimatedFlightCostPerPerson * currentTrip.travelers * 2
       )
     }, 0)
     return sum * 1.1
