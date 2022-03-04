@@ -17,7 +17,7 @@ class DataRepository {
         currentDestination.estimatedFlightCostPerPerson * currentTrip.travelers
       )
     }, 0)
-    return sum
+    return sum * 1.1
   }
 }
 
