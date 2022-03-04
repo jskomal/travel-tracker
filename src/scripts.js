@@ -46,6 +46,7 @@ const parseData = (fetchedData) => {
   data = new DataRepository(dataRepository)
   selectRandomUserID()
   updateDisplay(currentUserID)
+  console.log(data.calcTotalCostThisYear(currentUserID))
 }
 
 // event listeners
