@@ -3,6 +3,7 @@ import { data } from './scripts'
 let currentUserID
 // query selectors
 const userName = document.querySelector('#userName')
+const tripView = document.querySelector('#tripView')
 
 // functions
 
@@ -12,11 +13,16 @@ const getRandomIndex = (array) => {
 
 const selectRandomUserID = () => {
   currentUserID = getRandomIndex(data.travelers)
-  console.log(currentUserID)
 }
 
 const updateName = () => {
   userName.innerText = `Welcome, ${data.travelers[currentUserID - 1].getFirstName()}`
+}
+
+const updateTripView = () => {
+  const renderer = ''
+
+  tripView.innerHTML = renderer
 }
 
 const updateDisplay = () => {
@@ -24,4 +30,4 @@ const updateDisplay = () => {
   updateTripView()
 }
 
-export { getRandomIndex, selectRandomUserID, updateDisplay }
+export { getRandomIndex, selectRandomUserID, updateDisplay, currentUserID }
