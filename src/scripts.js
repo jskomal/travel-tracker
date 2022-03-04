@@ -16,6 +16,8 @@ import { DataRepository } from './DataRepository'
 
 import { fetchData } from './apiCalls'
 
+import { selectRandomUserID, updateDisplay, currentUserID } from './domUpdates'
+
 import dayjs from 'dayjs'
 
 // query selectors
@@ -42,8 +44,8 @@ const parseData = (fetchedData) => {
     (destination) => new Destination(destination)
   )
   data = new DataRepository(dataRepository)
-  console.log(data)
-  console.log(data.calcTotalCost(1))
+  selectRandomUserID()
+  updateDisplay(currentUserID)
 }
 
 // event listeners
