@@ -43,7 +43,10 @@ const parseData = (fetchedData) => {
   )
   data = new DataRepository(dataRepository)
   console.log(data)
+  console.log(data.calcTotalCost(1))
 }
 
 // event listeners
 window.addEventListener('load', fetchAllData)
+
+export { data }
