@@ -1,6 +1,8 @@
 import { data } from './scripts'
 
+let currentUserID
 // query selectors
+const userName = document.querySelector('#userName')
 
 // functions
 
@@ -9,7 +11,17 @@ const getRandomIndex = (array) => {
 }
 
 const selectRandomUserID = () => {
-  return getRandomIndex(data.travelers)
+  currentUserID = getRandomIndex(data.travelers)
+  console.log(currentUserID)
 }
 
-export { getRandomIndex, selectRandomUserID }
+const updateName = () => {
+  userName.innerText = `Welcome, ${data.travelers[currentUserID - 1].getFirstName()}`
+}
+
+const updateDisplay = () => {
+  updateName()
+  updateTripView()
+}
+
+export { getRandomIndex, selectRandomUserID, updateDisplay }
