@@ -89,8 +89,9 @@ h1 {
 nav {
   height: 100%;
   width: 20vw;
-  background-color: #a0b8c7;
+  background-color: #80a6bf;
   border-top: 1vh solid #e63946;
+  border-right: 1px solid #333;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,50 +106,36 @@ nav {
   color: #fff;
 }
 
+.financial-buttons {
+  border-top: 1px solid #333;
+  margin-top: 1vh;
+  padding-top: 1vh;
+}
+
 main {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   height: 100%;
   left: 20vw;
+  background-color: #a0b8c7;
 }
 
-.top-view,
 .trip-view {
-  width: 100%;
-  left: 20vw;
-  background-color: rgba(51, 51, 51, 0.365);
+  height: 100%;
   display: flex;
-  justify-content: space-around;
-}
-
-.top-view {
-  height: 40vh;
-  box-shadow: 0 1vw 1vw -1vw #333;
-}
-
-.trip-maker,
-.financials {
-  width: 30vw;
-  margin: 0.5rem;
-  background-color: #eefaf9;
-  border-top: 1vh solid #457b9d;
-}
-
-.trip-view {
-  height: 50vh;
 }
 
 .trip-card {
   width: 26vw;
+  height: 44vh;
   background-color: #eefaf9;
   margin: 0.5rem;
   border-bottom: 1vh solid #1d3557;
 }
 
 .image-header {
+  position: relative;
   background-color: #1d3557;
-  color: #fff;
+  height: 20vh;
 }
 
 .image-header > img {
@@ -157,12 +144,20 @@ main {
   object-fit: cover;
 }
 
+.destination-name-text {
+  position: absolute;
+  bottom: 0;
+  padding: 0 0.2rem;
+  background-color: #1d3557;
+  color: #fff;
+}
+
 .trip-info {
-  height: 30vh;
-  border: 1px solid red;
+  height: 23.9vh;
+  border-top: 1vh solid #1d3557;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
