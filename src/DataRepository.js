@@ -28,8 +28,9 @@ class DataRepository {
     }
   }
 
-  getTrips(filterTerm) {
+  getTrips(userID, filterTerm) {
     const userTrips = this.trips.filter((trip) => trip.userID === userID)
+    return userTrips
   }
 }
 
