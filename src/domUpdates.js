@@ -6,6 +6,14 @@ let currentUserID
 const userName = document.querySelector('#userName')
 const tripView = document.querySelector('#tripView')
 
+// buttons
+const viewAllButton = document.querySelector('#viewAll')
+const viewPresentButton = document.querySelector('#viewPresent')
+const viewUpcomingButton = document.querySelector('#viewUpcoming')
+const viewPastButton = document.querySelector('#viewPast')
+const viewPendingButton = document.querySelector('#viewPending')
+const filterButtons = document.querySelector('#filterButtons')
+
 // functions
 
 const getRandomIndex = (array) => {
@@ -20,8 +28,8 @@ const updateName = () => {
   userName.innerText = `Welcome, ${data.travelers[currentUserID - 1].getFirstName()}`
 }
 
-const updateTripView = () => {
-  const currentTrips = data.getTrips(currentUserID - 1, 'all')
+const updateTripView = (filterTerm) => {
+  const currentTrips = data.getTrips(currentUserID - 1, filterTerm || 'all')
   let renderer = ''
   currentTrips.forEach((trip) => {
     let currentDestination = data.destinations.find(
