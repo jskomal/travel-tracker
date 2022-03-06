@@ -29,8 +29,28 @@ class DataRepository {
   }
 
   getTrips(userID, filterTerm) {
-    const userTrips = this.trips.filter((trip) => trip.userID === userID)
-    return userTrips
+    if (filterTerm === 'all') {
+      const userTrips = this.trips.filter((trip) => trip.userID === userID)
+      return userTrips
+    } else if (filterTerm === 'present') {
+      const userTrips =
+        this.trips.filter((trip) => trip.userID === userID) &&
+        trip.date.isSame(dayjs('1 / 1 / 2022'), 'year') &&
+        trip.status === 'approved'
+      return userTrips
+    } else if (filterTerm === 'upcoming') {
+      this.trips.filter((trip) => trip.userID === userID) &&
+        trip.date.isAfter(dayjs()) &&
+        trip.status === 'approved'
+    } else if (filterTerm === 'past') {
+      this.trips.filter((trip) => trip.userID === userID) &&
+        trip.date.isBefore(dayjs()) &&
+        trip.status === 'approved'
+    } else if (filterTerm === 'pending') {
+      const userTrips =
+        this.trips.filter((trip) => trip.userID === userID) && trip.status !== 'approved'
+      return userTrips
+    }
   }
 }
 
