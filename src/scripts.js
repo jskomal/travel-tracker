@@ -44,6 +44,7 @@ const parseData = (fetchedData) => {
     (destination) => new Destination(destination)
   )
   data = new DataRepository(dataRepository)
+  console.log(data)
   selectRandomUserID()
   updateDisplay(currentUserID)
   console.log(data.calcTotalCostThisYear(currentUserID))

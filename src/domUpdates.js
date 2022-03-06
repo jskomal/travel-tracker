@@ -27,6 +27,7 @@ const updateTripView = () => {
     let currentDestination = data.destinations.find(
       (place) => trip.destinationID === place.id
     )
+
     renderer += `
       <article class='trip-card'>
         <div class='image-header'>
@@ -41,7 +42,9 @@ const updateTripView = () => {
       .add(trip.duration, 'days')
       .format('MMM D, YY')}</h4>
           <h4>${trip.travelers} travelers</h4>
-          <h4>Suggested Activities: ${trip.suggestedActivites}</h4>
+          <h4>Suggested Activities: ${
+            trip.suggestedActivites || 'Nothing to see here yet!'
+          }</h4>
           <h4>Trip Status: ${trip.status}</h4>
         </section>
       </article>
