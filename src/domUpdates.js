@@ -14,6 +14,8 @@ const viewPastButton = document.querySelector('#viewPast')
 const viewPendingButton = document.querySelector('#viewPending')
 const filterButtons = document.querySelector('#filterButtons')
 
+const purchases = document.querySelector('#purchases')
+
 // functions
 
 const getRandomIndex = (array) => {
@@ -61,8 +63,13 @@ const updateTripView = (filterTerm) => {
   tripView.innerHTML = renderer
 }
 
+const updatePurchases = () => {
+  purchases.innerText = data.calcTotalCostThisYear(currentUserID - 1)
+}
+
 const updateDisplay = () => {
   updateName()
+  updatePurchases()
   updateTripView()
 }
 
