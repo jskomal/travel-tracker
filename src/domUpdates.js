@@ -31,7 +31,7 @@ const updateName = () => {
 }
 
 const updateTripView = (filterTerm) => {
-  const currentTrips = data.getTrips(currentUserID - 1, filterTerm || 'all')
+  const currentTrips = data.getTrips(currentUserID - 1, filterTerm || 'viewAll')
   let renderer = ''
   currentTrips.forEach((trip) => {
     let currentDestination = data.destinations.find(
@@ -73,4 +73,16 @@ const updateDisplay = () => {
   updateTripView()
 }
 
-export { getRandomIndex, selectRandomUserID, updateDisplay, currentUserID }
+const filterTrips = (e) => {
+  e.preventDefault()
+  updateTripView(e.target.id)
+}
+
+export {
+  getRandomIndex,
+  selectRandomUserID,
+  updateDisplay,
+  currentUserID,
+  filterButtons,
+  filterTrips
+}
