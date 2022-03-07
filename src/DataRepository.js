@@ -24,7 +24,7 @@ class DataRepository {
     if (!sum) {
       return `No trips found this year!`
     } else {
-      return parseFloat((sum * 1.1).toFixed(2))
+      return `You've spent $${parseFloat((sum * 1.1).toFixed(2))} on trips this year`
     }
   }
 
