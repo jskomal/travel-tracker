@@ -47,7 +47,6 @@ const parseData = (fetchedData) => {
   console.log(data)
   selectRandomUserID()
   updateDisplay(currentUserID)
-  console.log(data.calcTotalCostThisYear(currentUserID))
 }
 
 // event listeners
