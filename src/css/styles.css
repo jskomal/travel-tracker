@@ -1,0 +1,90 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@100;400;600&display=swap');
+
+*::before,
+*::after {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+  background-color: #eefaf9;
+  font-family: 'Bitter', serif;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+  --lightest: #eefaf9;
+  --light-blue: #a8dadc;
+  --med-blue: #457b9d;
+  --dark-blue: #1d3557;
+  --red: #e63946;
+  --b-blue: #61a5c2;
+}
+
+header {
+  position: fixed;
+  height: 20vh;
+  width: 100%;
+  background-color: #a8dadc;
+  border-bottom: 1px solid #333;
+  box-shadow: 0 0 1vw #333;
+}
+
+.logo {
+  display: flex;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+h1 {
+  font-size: 5.5vw;
+  font-weight: 100;
+}
+
+.logo > img {
+  height: 10vh;
+}
+
+nav {
+  position: fixed;
+  height: 100%;
+  width: 20wv;
+  top: 20vh;
+  border: 1px solid red;
+}
