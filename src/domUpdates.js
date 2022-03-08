@@ -25,6 +25,7 @@ const destinationInput = document.querySelector('#destinations')
 const travelersInput = document.querySelector('#travelers')
 const calendarInput = document.querySelector('#startDate')
 const durationInput = document.querySelector('#duration')
+const bookSubmit = document.querySelector('#bookSubmit')
 
 const estimatedCost = document.querySelector('#estimatedCost')
 
@@ -117,5 +118,6 @@ export {
   travelersInput,
   calendarInput,
   durationInput,
-  estimatedCost
+  estimatedCost,
+  bookSubmit
 }
