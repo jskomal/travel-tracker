@@ -1,4 +1,3 @@
-import { data } from './scripts'
 import dayjs from 'dayjs'
 
 class DataRepository {
