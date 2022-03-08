@@ -16,6 +16,10 @@ const filterButtons = document.querySelector('#filterButtons')
 
 const purchases = document.querySelector('#purchases')
 
+const bookTripButton = document.querySelector('#bookTrip')
+const newBookingView = document.querySelector('#bookView')
+const closeBookingView = document.querySelector('#closeBookingModal')
+
 // functions
 
 const getRandomIndex = (array) => {
@@ -78,11 +82,18 @@ const filterTrips = (e) => {
   updateTripView(e.target.id)
 }
 
+const toggleBookingView = () => {
+  newBookingView.classList.toggle('hidden')
+}
+
 export {
   getRandomIndex,
   selectRandomUserID,
   updateDisplay,
   currentUserID,
   filterButtons,
-  filterTrips
+  filterTrips,
+  toggleBookingView,
+  bookTripButton,
+  closeBookingView
 }
