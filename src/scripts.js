@@ -28,6 +28,10 @@ import {
   toggleBookingView,
   bookTripButton,
   closeBookingView,
+  destinationInput,
+  travelersInput,
+  calendarInput,
+  durationInput,
   estimatedCost,
   bookSubmit,
   updateEstimatedCost,
@@ -75,5 +79,9 @@ filterButtons.addEventListener('click', filterTrips)
 bookTripButton.addEventListener('click', toggleBookingView)
 closeBookingView.addEventListener('click', toggleBookingView)
 bookSubmit.addEventListener('click', submitTrip)
+destinationInput.addEventListener('blur', updateEstimatedCost)
+calendarInput.addEventListener('blur', updateEstimatedCost)
+travelersInput.addEventListener('keyup', updateEstimatedCost)
+durationInput.addEventListener('keyup', updateEstimatedCost)
 
 export { data, fetchAllData }
