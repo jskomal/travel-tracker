@@ -2,6 +2,7 @@ import { data } from './scripts'
 import dayjs from 'dayjs'
 
 let currentUserID
+
 // query selectors
 const userName = document.querySelector('#userName')
 const tripView = document.querySelector('#tripView')
@@ -28,7 +29,6 @@ const durationInput = document.querySelector('#duration')
 const estimatedCost = document.querySelector('#estimatedCost')
 
 // functions
-
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length)
 }
@@ -91,6 +91,16 @@ const filterTrips = (e) => {
 
 const toggleBookingView = () => {
   newBookingView.classList.toggle('hidden')
+}
+
+const updateEstimatedCost = () => {
+  const currentDestination = data.destinations.find(
+    (place) => place.id === destinationInput.value
+  )
+  const sum =
+    currentDestination.estimatedLodgingCostPerDay * durationInput +
+    currentDestination.estimatedFlightCostPerPerson * 2
+  estimatedCost.innerText = parseFloat((sum * 1.1).toFixed(2))
 }
 
 export {
