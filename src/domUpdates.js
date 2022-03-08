@@ -20,6 +20,13 @@ const bookTripButton = document.querySelector('#bookTrip')
 const newBookingView = document.querySelector('#bookView')
 const closeBookingView = document.querySelector('#closeBookingModal')
 
+const destinationInput = document.querySelector('#destinations')
+const travelersInput = document.querySelector('#travelers')
+const calendarInput = document.querySelector('#startDate')
+const durationInput = document.querySelector('#duration')
+
+const estimatedCost = document.querySelector('#estimatedCost')
+
 // functions
 
 const getRandomIndex = (array) => {
@@ -95,5 +102,10 @@ export {
   filterTrips,
   toggleBookingView,
   bookTripButton,
-  closeBookingView
+  closeBookingView,
+  destinationInput,
+  travelersInput,
+  calendarInput,
+  durationInput,
+  estimatedCost
 }
