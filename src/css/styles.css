@@ -55,6 +55,10 @@ h6 {
   --b-blue: #61a5c2;
 }
 
+button {
+  cursor: pointer;
+}
+
 header {
   position: fixed;
   height: 10vh;
@@ -168,18 +172,46 @@ main {
   align-items: center;
 }
 
-.book {
+.book-view {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(51, 51, 51, 0.543);
+}
+
+.booking-form {
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   height: 75vh;
-  width: 75vw;
+  width: 60vw;
   background-color: #a0b8c7;
   border-radius: 0.2rem;
-  box-shadow: 0 0 0 20vw rgba(51, 51, 51, 0.543);
 }
 
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.close-booking {
+  width: 2.5vw;
+  height: 2.5vw;
+  cursor: pointer;
+}
+
+.close-booking:hover {
+  content: url(../images/close-clr.svg);
+}
+
+.form-entries {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .hidden {
   display: none;
 }
