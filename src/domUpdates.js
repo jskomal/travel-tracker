@@ -98,13 +98,21 @@ const toggleBookingView = () => {
 }
 
 const updateEstimatedCost = () => {
-  const currentDestination = data.destinations.find(
-    (place) => place.id === destinationInput.value
-  )
+  const currentDestination = data.destinations.find((place) => {
+    return place.id == destinationInput.value
+  })
   const sum =
-    currentDestination.estimatedLodgingCostPerDay * durationInput +
-    currentDestination.estimatedFlightCostPerPerson * 2
-  estimatedCost.innerText = parseFloat((sum * 1.1).toFixed(2))
+    (parseInt(currentDestination.estimatedLodgingCostPerDay) *
+      parseInt(durationInput.value) +
+      parseInt(currentDestination.estimatedFlightCostPerPerson) * 2) *
+    parseInt(travelersInput.value)
+  if (!sum) {
+    estimatedCost.innerText = 'Please fill out all fields to see your estimated cost!'
+  } else {
+    estimatedCost.innerText = `Your estimated cost is ${parseFloat(
+      (sum * 1.1).toFixed(2)
+    )}`
+  }
 }
 
 const submitTrip = (e) => {
