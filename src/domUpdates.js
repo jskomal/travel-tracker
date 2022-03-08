@@ -1,5 +1,6 @@
-import { data } from './scripts'
 import dayjs from 'dayjs'
+import { data } from './scripts'
+import { postTrip } from './apiCalls'
 
 let currentUserID
 
@@ -104,6 +105,11 @@ const updateEstimatedCost = () => {
   estimatedCost.innerText = parseFloat((sum * 1.1).toFixed(2))
 }
 
+const submitTrip = (e) => {
+  e.preventDefault()
+  postTrip()
+}
+
 export {
   getRandomIndex,
   selectRandomUserID,
@@ -119,5 +125,7 @@ export {
   calendarInput,
   durationInput,
   estimatedCost,
-  bookSubmit
+  bookSubmit,
+  updateEstimatedCost,
+  submitTrip
 }

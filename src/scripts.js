@@ -16,7 +16,7 @@ import { Trip } from './Trip'
 import { Destination } from './Destination'
 import { DataRepository } from './DataRepository'
 
-import { fetchData } from './apiCalls'
+import { fetchData, postTrip } from './apiCalls'
 
 import {
   getRandomIndex,
@@ -25,10 +25,13 @@ import {
   currentUserID,
   filterButtons,
   filterTrips,
-  newBookingButton,
   toggleBookingView,
   bookTripButton,
-  closeBookingView
+  closeBookingView,
+  estimatedCost,
+  bookSubmit,
+  updateEstimatedCost,
+  submitTrip
 } from './domUpdates'
 
 import dayjs from 'dayjs'
@@ -66,5 +69,6 @@ window.addEventListener('load', fetchAllData)
 filterButtons.addEventListener('click', filterTrips)
 bookTripButton.addEventListener('click', toggleBookingView)
 closeBookingView.addEventListener('click', toggleBookingView)
+bookSubmit.addEventListener('click', submitTrip)
 
 export { data }
