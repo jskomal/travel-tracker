@@ -8,6 +8,8 @@ import './images/earth-blk.svg'
 import './images/earth-wht.svg'
 import './images/island.svg'
 import './images/paper-plane-clr.svg'
+import './images/close.svg'
+import './images/close-clr.svg'
 
 import { Traveler } from './Traveler'
 import { Trip } from './Trip'
@@ -22,8 +24,11 @@ import {
   updateDisplay,
   currentUserID,
   filterButtons,
-  clickFilterButton,
-  filterTrips
+  filterTrips,
+  newBookingButton,
+  toggleBookingView,
+  bookTripButton,
+  closeBookingView
 } from './domUpdates'
 
 import dayjs from 'dayjs'
@@ -59,5 +64,7 @@ const parseData = (fetchedData) => {
 // event listeners
 window.addEventListener('load', fetchAllData)
 filterButtons.addEventListener('click', filterTrips)
+bookTripButton.addEventListener('click', toggleBookingView)
+closeBookingView.addEventListener('click', toggleBookingView)
 
 export { data }
