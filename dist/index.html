@@ -21,22 +21,24 @@
     </header>
     <div class="main-view">
       <nav class="sidebar">
-        <h2>Welcome, [USER]</h2>
+        <h2 id="userName">Welcome, [USER]</h2>
         <h3>See My Trips</h3>
-        <button class="trip-filter-button" id="viewAll">All</button>
-        <button class="trip-filter-button" id="viewPresent">Present</button>
-        <button class="trip-filter-button" id="viewUpcomming">Upcoming</button>
-        <button class="trip-filter-button" id="viewPast">Past</button>
-        <button class="trip-filter-button" id="viewPending">Pending</button>
-        <button class="trip-filter-button finance-button" id="viewFinancials">
-          Purchases
-        </button>
-        <button class="trip-filter-button finance-button" id="bookFlight">
-          Book a new trip
-        </button>
+        <div class="filter-buttons" id="filterButtons">
+          <button class="trip-filter-button" id="viewAll">All</button>
+          <button class="trip-filter-button" id="viewPresent">Present</button>
+          <button class="trip-filter-button" id="viewUpcoming">Upcoming</button>
+          <button class="trip-filter-button" id="viewPast">Past</button>
+          <button class="trip-filter-button" id="viewPending">Pending</button>
+        </div>
+        <div class="financial-buttons">
+          <button class="trip-filter-button finance-button" id="bookFlight">
+            Book a new trip
+          </button>
+          <h4 id="purchases">You've spent X this year on travel</h4>
+        </div>
       </nav>
       <main>
-        <section class="trip-view">
+        <section id="tripView" class="trip-view">
           <article class="trip-card">
             <div class="image-header">
               <img
@@ -46,19 +48,17 @@
               <h3 class="destination-name-text">Lima, Peru</h3>
             </div>
             <section class="trip-info">
-              <h4>Start Date: X</h4>
-              <h4>End Date: X</h4>
+              <h4>Dates: X - X</h4>
               <h4>X travelers</h4>
               <h4>Suggested Activities: X</h4>
               <h4>Trip Status: X</h4>
             </section>
           </article>
         </section>
-        <section class="top-view">
-          <article class="trip-maker hidden"></article>
-          <article class="financials hidden"></article>
-        </section>
       </main>
+      <section id="bookView" class="book hidden">
+        <h3>Book a new trip</h3>
+      </section>
     </div>
   </body>
 </html>

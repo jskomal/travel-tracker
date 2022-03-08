@@ -16,7 +16,6 @@ body {
   height: 100%;
   background-color: #eefaf9;
   font-family: 'Bitter', serif;
-  overflow: hidden;
 }
 body {
   line-height: 1.5;
@@ -57,11 +56,13 @@ h6 {
 }
 
 header {
+  position: fixed;
   height: 10vh;
   width: 100%;
   background-color: #a8dadc;
   border-bottom: 1px solid #333;
   box-shadow: 0 0 1vw #333;
+  z-index: 10;
 }
 
 .logo {
@@ -87,10 +88,13 @@ h1 {
 }
 
 nav {
+  position: fixed;
+  top: 10vh;
   height: 100%;
   width: 20vw;
-  background-color: #a0b8c7;
+  background-color: #80a6bf;
   border-top: 1vh solid #e63946;
+  border-right: 1px solid #333;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,50 +109,40 @@ nav {
   color: #fff;
 }
 
+.financial-buttons {
+  border-top: 1px solid #333;
+  margin-top: 1vh;
+  padding-top: 1vh;
+}
+
 main {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   width: 100%;
-  height: 100%;
-  left: 20vw;
-}
-
-.top-view,
-.trip-view {
-  width: 100%;
-  left: 20vw;
-  background-color: rgba(51, 51, 51, 0.365);
-  display: flex;
-  justify-content: space-around;
-}
-
-.top-view {
-  height: 40vh;
-  box-shadow: 0 1vw 1vw -1vw #333;
-}
-
-.trip-maker,
-.financials {
-  width: 30vw;
-  margin: 0.5rem;
-  background-color: #eefaf9;
-  border-top: 1vh solid #457b9d;
+  margin-left: 20vw;
+  top: 10vh;
+  background-color: #a0b8c7;
 }
 
 .trip-view {
-  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #a0b8c7;
 }
 
 .trip-card {
-  width: 26vw;
+  width: 31.5%;
+  height: 42vh;
   background-color: #eefaf9;
   margin: 0.5rem;
   border-bottom: 1vh solid #1d3557;
 }
 
 .image-header {
+  position: relative;
   background-color: #1d3557;
-  color: #fff;
+  height: 20vh;
 }
 
 .image-header > img {
@@ -157,13 +151,33 @@ main {
   object-fit: cover;
 }
 
+.destination-name-text {
+  position: absolute;
+  bottom: 0;
+  padding: 0 0.2rem;
+  background-color: #1d3557;
+  color: #fff;
+}
+
 .trip-info {
-  height: 30vh;
-  border: 1px solid red;
+  height: 22vh;
+  border-top: 1vh solid #1d3557;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+}
+
+.book {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 75vh;
+  width: 75vw;
+  background-color: #a0b8c7;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 0 20vw rgba(51, 51, 51, 0.543);
 }
 
 .hidden {

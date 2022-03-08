@@ -16,6 +16,16 @@ import { DataRepository } from './DataRepository'
 
 import { fetchData } from './apiCalls'
 
+import {
+  getRandomIndex,
+  selectRandomUserID,
+  updateDisplay,
+  currentUserID,
+  filterButtons,
+  clickFilterButton,
+  filterTrips
+} from './domUpdates'
+
 import dayjs from 'dayjs'
 
 // query selectors
@@ -42,8 +52,12 @@ const parseData = (fetchedData) => {
     (destination) => new Destination(destination)
   )
   data = new DataRepository(dataRepository)
-  console.log(data)
+  selectRandomUserID()
+  updateDisplay(currentUserID)
 }
 
 // event listeners
 window.addEventListener('load', fetchAllData)
+filterButtons.addEventListener('click', filterTrips)
+
+export { data }
