@@ -7,7 +7,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  overflow: hidden;
 }
 * {
   margin: 0;
@@ -17,6 +16,7 @@ body {
   height: 100%;
   background-color: #eefaf9;
   font-family: 'Bitter', serif;
+  overflow: hidden;
 }
 body {
   line-height: 1.5;
@@ -57,8 +57,7 @@ h6 {
 }
 
 header {
-  position: fixed;
-  height: 20vh;
+  height: 10vh;
   width: 100%;
   background-color: #a8dadc;
   border-bottom: 1px solid #333;
@@ -81,10 +80,92 @@ h1 {
   height: 10vh;
 }
 
-nav {
-  position: fixed;
+.main-view {
+  display: flex;
   height: 100%;
-  width: 20wv;
-  top: 20vh;
+  width: 100%;
+}
+
+nav {
+  height: 100%;
+  width: 20vw;
+  background-color: #a0b8c7;
+  border-top: 1vh solid #e63946;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.trip-filter-button {
+  width: 15vw;
+  margin: 0.2rem;
+  background-color: #1d3557;
+  border: none;
+  color: #fff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  left: 20vw;
+}
+
+.top-view,
+.trip-view {
+  width: 100%;
+  left: 20vw;
+  background-color: rgba(51, 51, 51, 0.365);
+  display: flex;
+  justify-content: space-around;
+}
+
+.top-view {
+  height: 40vh;
+  box-shadow: 0 1vw 1vw -1vw #333;
+}
+
+.trip-maker,
+.financials {
+  width: 30vw;
+  margin: 0.5rem;
+  background-color: #eefaf9;
+  border-top: 1vh solid #457b9d;
+}
+
+.trip-view {
+  height: 50vh;
+}
+
+.trip-card {
+  width: 26vw;
+  background-color: #eefaf9;
+  margin: 0.5rem;
+  border-bottom: 1vh solid #1d3557;
+}
+
+.image-header {
+  background-color: #1d3557;
+  color: #fff;
+}
+
+.image-header > img {
+  width: 100%;
+  height: 20vh;
+  object-fit: cover;
+}
+
+.trip-info {
+  height: 30vh;
   border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
 }
