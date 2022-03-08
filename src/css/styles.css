@@ -82,6 +82,9 @@ button {
   padding: 0.5rem;
 }
 
+.login-input {
+  width: 15vw;
+}
 header {
   position: fixed;
   height: 10vh;
