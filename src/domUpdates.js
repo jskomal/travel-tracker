@@ -110,7 +110,7 @@ const updateEstimatedCost = () => {
   if (!sum) {
     estimatedCost.innerText = 'Please fill out all fields to see your estimated cost!'
   } else {
-    estimatedCost.innerText = `Your estimated cost is ${parseFloat(
+    estimatedCost.innerText = `Your estimated cost is $${parseFloat(
       (sum * 1.1).toFixed(2)
     )}`
   }
