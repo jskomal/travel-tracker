@@ -36,11 +36,13 @@ const getRandomIndex = (array) => {
 }
 
 const selectRandomUserID = () => {
-  currentUserID = getRandomIndex(data.travelers)
+  currentUserID = getRandomIndex(data.travelers) + 1
 }
 
 const updateName = () => {
-  userName.innerText = `Welcome, ${data.travelers[currentUserID - 1].getFirstName()}`
+  userName.innerText = `Welcome, ${data.travelers
+    .find((person) => person.id === currentUserID)
+    .getFirstName()}`
 }
 
 const updateTripView = (filterTerm) => {
@@ -77,7 +79,7 @@ const updateTripView = (filterTerm) => {
 }
 
 const updatePurchases = () => {
-  purchases.innerText = data.calcTotalCostThisYear(currentUserID - 1)
+  purchases.innerText = data.calcTotalCostThisYear(currentUserID)
 }
 
 const updateDisplay = () => {
