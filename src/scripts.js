@@ -31,7 +31,8 @@ import {
   estimatedCost,
   bookSubmit,
   updateEstimatedCost,
-  submitTrip
+  submitTrip,
+  userName
 } from './domUpdates'
 
 import dayjs from 'dayjs'
@@ -60,8 +61,12 @@ const parseData = (fetchedData) => {
     (destination) => new Destination(destination)
   )
   data = new DataRepository(dataRepository)
-  selectRandomUserID()
-  updateDisplay(currentUserID)
+  if (userName.innerText === 'Welcome, [USER]') {
+    selectRandomUserID()
+    updateDisplay(currentUserID)
+  } else {
+    updateDisplay(currentUserID)
+  }
 }
 
 // event listeners
@@ -71,4 +76,4 @@ bookTripButton.addEventListener('click', toggleBookingView)
 closeBookingView.addEventListener('click', toggleBookingView)
 bookSubmit.addEventListener('click', submitTrip)
 
-export { data }
+export { data, fetchAllData }

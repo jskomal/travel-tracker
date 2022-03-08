@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import { data } from './scripts'
+import { data, fetchAllData } from './scripts'
 import {
   currentUserID,
   destinationInput,
@@ -33,11 +33,10 @@ const postTrip = () => {
     body: JSON.stringify(newTripData)
   }).then((response) => {
     if (!response.ok) {
-      console.log(newTripData)
       throw new Error('Failed to book a new trip')
     } else {
-      console.log('SUCCESS')
       response.json().then((data) => console.log(data))
+      fetchAllData()
     }
   })
 }

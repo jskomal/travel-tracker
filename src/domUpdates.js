@@ -129,5 +129,6 @@ export {
   estimatedCost,
   bookSubmit,
   updateEstimatedCost,
-  submitTrip
+  submitTrip,
+  userName
 }
