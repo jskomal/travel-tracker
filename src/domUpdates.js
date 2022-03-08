@@ -44,7 +44,7 @@ const updateName = () => {
 }
 
 const updateTripView = (filterTerm) => {
-  const currentTrips = data.getTrips(currentUserID - 1, filterTerm || 'viewAll')
+  const currentTrips = data.getTrips(currentUserID, filterTerm || 'viewAll')
   let renderer = ''
   currentTrips.forEach((trip) => {
     let currentDestination = data.destinations.find(
