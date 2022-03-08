@@ -8,13 +8,15 @@ import './images/earth-blk.svg'
 import './images/earth-wht.svg'
 import './images/island.svg'
 import './images/paper-plane-clr.svg'
+import './images/close.svg'
+import './images/close-clr.svg'
 
 import { Traveler } from './Traveler'
 import { Trip } from './Trip'
 import { Destination } from './Destination'
 import { DataRepository } from './DataRepository'
 
-import { fetchData } from './apiCalls'
+import { fetchData, postTrip } from './apiCalls'
 
 import {
   getRandomIndex,
@@ -22,8 +24,19 @@ import {
   updateDisplay,
   currentUserID,
   filterButtons,
-  clickFilterButton,
-  filterTrips
+  filterTrips,
+  toggleBookingView,
+  bookTripButton,
+  closeBookingView,
+  destinationInput,
+  travelersInput,
+  calendarInput,
+  durationInput,
+  estimatedCost,
+  bookSubmit,
+  updateEstimatedCost,
+  submitTrip,
+  userName
 } from './domUpdates'
 
 import dayjs from 'dayjs'
@@ -52,12 +65,23 @@ const parseData = (fetchedData) => {
     (destination) => new Destination(destination)
   )
   data = new DataRepository(dataRepository)
-  selectRandomUserID()
-  updateDisplay(currentUserID)
+  if (userName.innerText === 'Welcome, [USER]') {
+    selectRandomUserID()
+    updateDisplay(currentUserID)
+  } else {
+    updateDisplay(currentUserID)
+  }
 }
 
 // event listeners
 window.addEventListener('load', fetchAllData)
 filterButtons.addEventListener('click', filterTrips)
+bookTripButton.addEventListener('click', toggleBookingView)
+closeBookingView.addEventListener('click', toggleBookingView)
+bookSubmit.addEventListener('click', submitTrip)
+destinationInput.addEventListener('blur', updateEstimatedCost)
+calendarInput.addEventListener('blur', updateEstimatedCost)
+travelersInput.addEventListener('keyup', updateEstimatedCost)
+durationInput.addEventListener('keyup', updateEstimatedCost)
 
-export { data }
+export { data, fetchAllData }

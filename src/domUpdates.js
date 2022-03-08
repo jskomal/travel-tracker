@@ -1,7 +1,9 @@
-import { data } from './scripts'
 import dayjs from 'dayjs'
+import { data } from './scripts'
+import { postTrip } from './apiCalls'
 
 let currentUserID
+
 // query selectors
 const userName = document.querySelector('#userName')
 const tripView = document.querySelector('#tripView')
@@ -16,22 +18,36 @@ const filterButtons = document.querySelector('#filterButtons')
 
 const purchases = document.querySelector('#purchases')
 
-// functions
+const bookTripButton = document.querySelector('#bookTrip')
+const newBookingView = document.querySelector('#bookView')
+const closeBookingView = document.querySelector('#closeBookingModal')
 
+const destinationInput = document.querySelector('#destinations')
+const travelersInput = document.querySelector('#travelers')
+const calendarInput = document.querySelector('#startDate')
+const durationInput = document.querySelector('#duration')
+const bookSubmit = document.querySelector('#bookSubmit')
+
+const estimatedCost = document.querySelector('#estimatedCost')
+const successMessage = document.querySelector('#successMessage')
+
+// functions
 const getRandomIndex = (array) => {
   return Math.floor(Math.random() * array.length)
 }
 
 const selectRandomUserID = () => {
-  currentUserID = getRandomIndex(data.travelers)
+  currentUserID = getRandomIndex(data.travelers) + 1
 }
 
 const updateName = () => {
-  userName.innerText = `Welcome, ${data.travelers[currentUserID - 1].getFirstName()}`
+  userName.innerText = `Welcome, ${data.travelers
+    .find((person) => person.id === currentUserID)
+    .getFirstName()}`
 }
 
 const updateTripView = (filterTerm) => {
-  const currentTrips = data.getTrips(currentUserID - 1, filterTerm || 'viewAll')
+  const currentTrips = data.getTrips(currentUserID, filterTerm || 'viewAll')
   let renderer = ''
   currentTrips.forEach((trip) => {
     let currentDestination = data.destinations.find(
@@ -64,7 +80,7 @@ const updateTripView = (filterTerm) => {
 }
 
 const updatePurchases = () => {
-  purchases.innerText = data.calcTotalCostThisYear(currentUserID - 1)
+  purchases.innerText = data.calcTotalCostThisYear(currentUserID)
 }
 
 const updateDisplay = () => {
@@ -78,11 +94,51 @@ const filterTrips = (e) => {
   updateTripView(e.target.id)
 }
 
+const toggleBookingView = () => {
+  newBookingView.classList.toggle('hidden')
+}
+
+const updateEstimatedCost = () => {
+  const currentDestination = data.destinations.find((place) => {
+    return place.id == destinationInput.value
+  })
+  const sum =
+    (parseInt(currentDestination.estimatedLodgingCostPerDay) *
+      parseInt(durationInput.value) +
+      parseInt(currentDestination.estimatedFlightCostPerPerson) * 2) *
+    parseInt(travelersInput.value)
+  if (!sum) {
+    estimatedCost.innerText = 'Please fill out all fields to see your estimated cost!'
+  } else {
+    estimatedCost.innerText = `Your estimated cost is $${parseFloat(
+      (sum * 1.1).toFixed(2)
+    )}`
+  }
+}
+
+const submitTrip = (e) => {
+  e.preventDefault()
+  postTrip()
+}
+
 export {
   getRandomIndex,
   selectRandomUserID,
   updateDisplay,
   currentUserID,
   filterButtons,
-  filterTrips
+  filterTrips,
+  toggleBookingView,
+  bookTripButton,
+  closeBookingView,
+  destinationInput,
+  travelersInput,
+  calendarInput,
+  durationInput,
+  estimatedCost,
+  bookSubmit,
+  updateEstimatedCost,
+  submitTrip,
+  userName,
+  successMessage
 }

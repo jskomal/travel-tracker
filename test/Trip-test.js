@@ -1,5 +1,6 @@
 import chai from 'chai'
 const expect = chai.expect
+import dayjs from 'dayjs'
 import { tripTestData } from './test-data'
 import { Trip } from '../src/Trip'
 
@@ -29,7 +30,7 @@ describe('Trips Tests', () => {
     expect(trip1.userID).to.equal(1)
     expect(trip1.destinationID).to.equal(1)
     expect(trip1.travelers).to.equal(1)
-    expect(trip1.date).to.equal('2022/09/16')
+    expect(trip1.date).to.deep.equal(dayjs('2022/09/16'))
     expect(trip1.duration).to.equal(8)
     expect(trip1.status).to.equal('approved')
     expect(trip1.suggestedActivities).to.deep.equal([])
