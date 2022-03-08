@@ -5,7 +5,8 @@ import {
   destinationInput,
   travelersInput,
   calendarInput,
-  durationInput
+  durationInput,
+  successMessage
 } from './domUpdates'
 
 const fetchData = (path) => {
@@ -33,9 +34,11 @@ const postTrip = () => {
     body: JSON.stringify(newTripData)
   }).then((response) => {
     if (!response.ok) {
+      successMessage.innerText = 'Failed to send new trip!'
       throw new Error('Failed to book a new trip')
     } else {
       response.json().then((data) => console.log(data))
+      successMessage.innerText = 'Your trip is now pending!'
       fetchAllData()
     }
   })

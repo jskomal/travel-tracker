@@ -29,6 +29,7 @@ const durationInput = document.querySelector('#duration')
 const bookSubmit = document.querySelector('#bookSubmit')
 
 const estimatedCost = document.querySelector('#estimatedCost')
+const successMessage = document.querySelector('#successMessage')
 
 // functions
 const getRandomIndex = (array) => {
@@ -138,5 +139,6 @@ export {
   bookSubmit,
   updateEstimatedCost,
   submitTrip,
-  userName
+  userName,
+  successMessage
 }
