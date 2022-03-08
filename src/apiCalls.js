@@ -1,7 +1,7 @@
 import dayjs from 'dayjs'
 import { data, fetchAllData } from './scripts'
+import { currentUserID } from './login'
 import {
-  currentUserID,
   destinationInput,
   travelersInput,
   calendarInput,
