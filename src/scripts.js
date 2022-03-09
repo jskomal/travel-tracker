@@ -19,10 +19,7 @@ import { DataRepository } from './DataRepository'
 import { fetchData, postTrip } from './apiCalls'
 
 import {
-  getRandomIndex,
-  selectRandomUserID,
   updateDisplay,
-  currentUserID,
   filterButtons,
   filterTrips,
   toggleBookingView,
@@ -38,6 +35,14 @@ import {
   submitTrip,
   userName
 } from './domUpdates'
+
+import {
+  currentUserID,
+  validateLogIn,
+  loginSubmit,
+  usernameInput,
+  userPassword
+} from './login'
 
 import dayjs from 'dayjs'
 
@@ -65,16 +70,11 @@ const parseData = (fetchedData) => {
     (destination) => new Destination(destination)
   )
   data = new DataRepository(dataRepository)
-  if (userName.innerText === 'Welcome, [USER]') {
-    selectRandomUserID()
-    updateDisplay(currentUserID)
-  } else {
-    updateDisplay(currentUserID)
-  }
+  updateDisplay(currentUserID)
 }
 
 // event listeners
-window.addEventListener('load', fetchAllData)
+
 filterButtons.addEventListener('click', filterTrips)
 bookTripButton.addEventListener('click', toggleBookingView)
 closeBookingView.addEventListener('click', toggleBookingView)
@@ -83,5 +83,9 @@ destinationInput.addEventListener('blur', updateEstimatedCost)
 calendarInput.addEventListener('blur', updateEstimatedCost)
 travelersInput.addEventListener('keyup', updateEstimatedCost)
 durationInput.addEventListener('keyup', updateEstimatedCost)
+
+loginSubmit.addEventListener('click', (e) => {
+  validateLogIn(e, usernameInput, userPassword)
+})
 
 export { data, fetchAllData }

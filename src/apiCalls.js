@@ -1,7 +1,7 @@
 import dayjs from 'dayjs'
 import { data, fetchAllData } from './scripts'
+import { currentUserID } from './login'
 import {
-  currentUserID,
   destinationInput,
   travelersInput,
   calendarInput,
@@ -37,7 +37,7 @@ const postTrip = () => {
       successMessage.innerText = 'Failed to send new trip!'
       throw new Error('Failed to book a new trip')
     } else {
-      response.json().then((data) => console.log(data))
+      response.json()
       successMessage.innerText = 'Your trip is now pending!'
       fetchAllData()
     }

@@ -1,19 +1,13 @@
 import dayjs from 'dayjs'
 import { data } from './scripts'
 import { postTrip } from './apiCalls'
-
-let currentUserID
+import { currentUserID } from './login'
 
 // query selectors
 const userName = document.querySelector('#userName')
 const tripView = document.querySelector('#tripView')
 
 // buttons
-const viewAllButton = document.querySelector('#viewAll')
-const viewPresentButton = document.querySelector('#viewPresent')
-const viewUpcomingButton = document.querySelector('#viewUpcoming')
-const viewPastButton = document.querySelector('#viewPast')
-const viewPendingButton = document.querySelector('#viewPending')
 const filterButtons = document.querySelector('#filterButtons')
 
 const purchases = document.querySelector('#purchases')
@@ -32,13 +26,6 @@ const estimatedCost = document.querySelector('#estimatedCost')
 const successMessage = document.querySelector('#successMessage')
 
 // functions
-const getRandomIndex = (array) => {
-  return Math.floor(Math.random() * array.length)
-}
-
-const selectRandomUserID = () => {
-  currentUserID = getRandomIndex(data.travelers) + 1
-}
 
 const updateName = () => {
   userName.innerText = `Welcome, ${data.travelers
@@ -122,10 +109,7 @@ const submitTrip = (e) => {
 }
 
 export {
-  getRandomIndex,
-  selectRandomUserID,
   updateDisplay,
-  currentUserID,
   filterButtons,
   filterTrips,
   toggleBookingView,
